@@ -1,0 +1,6 @@
+
+message queue test
+interprocess communication test
+
+practice
+example
