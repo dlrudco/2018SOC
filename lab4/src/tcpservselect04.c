@@ -2,6 +2,7 @@
 #include	"unp.h"
 #include <sys/time.h>
 #define NOTDEF
+#define OPEN_MAX 256
 
 int
 main(int argc, char **argv)
@@ -93,3 +94,4 @@ main(int argc, char **argv)
 	}
 }
 /* end fig02 */
+

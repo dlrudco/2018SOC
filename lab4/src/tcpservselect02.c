@@ -22,7 +22,6 @@ main(int argc, char **argv)
 	servaddr.sin_port        = htons(SERV_PORT);
 
 	Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
-	printf("listenfd: %d\n", listenfd);
 	Listen(listenfd, LISTENQ);
 
 	maxfd = listenfd;			/* initialize */
@@ -54,7 +53,6 @@ main(int argc, char **argv)
 #ifdef	NOTDEF
 			printf("new client\n");
 #endif
-			printf("new connfd: %d\n", connfd);
 			for (i = 0; i < FD_SETSIZE; i++)
 				if (client[i] < 0) {
 					client[i] = connfd;	/* save descriptor */
@@ -93,3 +91,4 @@ main(int argc, char **argv)
 	}
 }
 /* end fig02 */
+

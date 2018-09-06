@@ -4,10 +4,18 @@ PROGS =	tcpcli01 tcpcli04 tcpcli05 tcpcli06 tcpserv01_non \
 		tcpcli07 tcpcli08 tcpcli09 tcpcli10 \
 		tcpserv01 tcpserv02 tcpserv03 tcpserv04 \
 		tcpserv08 tcpserv09 tcpservselect01 tsigpipe \
-		tcpservselect02 tcpservselect03 tcpservselect04
+		tcpservselect02 tcpservselect03 tcpservselect04 \
+		tcpservpoll02 tcpservpoll03 tcpservpoll04
 
 all:	${PROGS}
+tcpservpoll02:        tcpservpoll02.o
+	${CC} ${CFLAGS} -o $@ tcpservpoll02.o ${LIBS}
 
+tcpservpoll03:        tcpservpoll03.o
+	${CC} ${CFLAGS} -o $@ tcpservpoll03.o ${LIBS}
+
+tcpservpoll04:        tcpservpoll04.o
+	${CC} ${CFLAGS} -o $@ tcpservpoll04.o ${LIBS}
 
 tcpservselect02:	tcpservselect02.o
 			${CC} ${CFLAGS} -o $@ tcpservselect02.o ${LIBS}

@@ -3,6 +3,7 @@
 #include <sys/time.h>
 #define NOTDEF
 
+
 int
 main(int argc, char **argv)
 {
@@ -37,7 +38,9 @@ main(int argc, char **argv)
 /* include fig02 */
 	for ( ; ; ) {
 		rset = allset;		/* structure assignment */
+		timeout.tv_sec = 5;	/* reset timer */
 		printf("Wait 5 sec!\n");
+
 		nready = Select(maxfd+1, &rset, NULL, NULL, &timeout);
 		if(nready == -1) {
 			printf("select error\n");
@@ -93,3 +96,4 @@ main(int argc, char **argv)
 	}
 }
 /* end fig02 */
+

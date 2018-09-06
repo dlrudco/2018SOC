@@ -22,7 +22,6 @@ main(int argc, char **argv)
 	servaddr.sin_port        = htons(SERV_PORT);
 
 	Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
-
 	Listen(listenfd, LISTENQ);
 
 	maxfd = listenfd;			/* initialize */
@@ -54,7 +53,6 @@ main(int argc, char **argv)
 #ifdef	NOTDEF
 			printf("new client\n");
 #endif
-
 			for (i = 0; i < FD_SETSIZE; i++)
 				if (client[i] < 0) {
 					client[i] = connfd;	/* save descriptor */
@@ -76,7 +74,7 @@ main(int argc, char **argv)
 		for (i = 0; i <= maxi; i++) {	/* check all clients for data */
 			if ( (sockfd = client[i]) < 0)
 				continue;
-			if (FD_ISSET(sockfd, &rset)) {
+			if (FD_ISSET(sockfd, &rset)){
 				printf("FD_ISSET fd: %d\n", sockfd);
 				if ( (n = Read(sockfd, buf, MAXLINE)) == 0) {
 						/*4connection closed by client */
@@ -93,3 +91,4 @@ main(int argc, char **argv)
 	}
 }
 /* end fig02 */
+
