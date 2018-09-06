@@ -1,27 +1,12 @@
 include ../Make.defines
 
-PROGS =	tcpcli01 tcpcli04 tcpcli05 tcpcli06 tcpserv01_non \
+PROGS =	tcpcli01 tcpcli04 tcpcli05 tcpcli06 \
 		tcpcli07 tcpcli08 tcpcli09 tcpcli10 \
-		tcpserv01 tcpserv02 tcpserv03 tcpserv04 \
-		tcpserv08 tcpserv09 tcpservselect01 tsigpipe \
-		tcpservselect02 tcpservselect03 tcpservselect04
+		tcpserv01_non tcpserv01 tcpserv02 tcpserv03 tcpserv04 \
+		tcpserv08 tcpserv09 tcpservselect01 tcpservselect02 tcpservselect03 tcpservselect04 \
+		tcpservpoll01 tcpservpoll02 tcpservpoll03 tcpservpoll04 tsigpipe
 
 all:	${PROGS}
-
-
-tcpservselect02:	tcpservselect02.o
-			${CC} ${CFLAGS} -o $@ tcpservselect02.o ${LIBS}
-
-
-tcpservselect03:	tcpservselect03.o
-			${CC} ${CFLAGS} -o $@ tcpservselect03.o ${LIBS}
-
-tcpservselect04:	tcpservselect04.o
-			${CC} ${CFLAGS} -o $@ tcpservselect04.o ${LIBS}
-
-
-tcpserv01_non:	tcpserv01_non.o
-		${CC} ${CFLAGS} -o $@ tcpserv01_non.o ${LIBS}
 
 tcpcli01:	tcpcli01.o
 		${CC} ${CFLAGS} -o $@ tcpcli01.o ${LIBS}
@@ -50,6 +35,9 @@ tcpcli10:	tcpcli10.o
 tcpcli11:	tcpcli11.o str_cli11.o
 		${CC} ${CFLAGS} -o $@ tcpcli11.o str_cli11.o ${LIBS}
 
+tcpserv01_non:	tcpserv01_non.o
+		${CC} ${CFLAGS} -o $@ tcpserv01_non.o ${LIBS}
+
 tcpserv01:	tcpserv01.o
 		${CC} ${CFLAGS} -o $@ tcpserv01.o ${LIBS}
 
@@ -73,8 +61,26 @@ tcpserv09:	tcpserv09.o str_echo09.o sigchldwaitpid.o
 tcpservselect01:	tcpservselect01.o
 		${CC} ${CFLAGS} -o $@ tcpservselect01.o ${LIBS}
 
+tcpservselect02:	tcpservselect02.o
+		${CC} ${CFLAGS} -o $@ tcpservselect02.o ${LIBS}
+
+tcpservselect03:	tcpservselect03.o
+		${CC} ${CFLAGS} -o $@ tcpservselect03.o ${LIBS}
+
+tcpservselect04:	tcpservselect04.o
+		${CC} ${CFLAGS} -o $@ tcpservselect04.o ${LIBS}
+
 tcpservpoll01:	tcpservpoll01.o
 		${CC} ${CFLAGS} -o $@ tcpservpoll01.o ${LIBS}
+
+tcpservpoll02:	tcpservpoll02.o
+		${CC} ${CFLAGS} -o $@ tcpservpoll02.o ${LIBS}
+
+tcpservpoll03:	tcpservpoll03.o
+		${CC} ${CFLAGS} -o $@ tcpservpoll03.o ${LIBS}
+
+tcpservpoll04:	tcpservpoll04.o
+		${CC} ${CFLAGS} -o $@ tcpservpoll04.o ${LIBS}
 
 tsigpipe:	tsigpipe.o
 		${CC} ${CFLAGS} -o $@ tsigpipe.o ${LIBS}
